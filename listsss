@@ -1,0 +1,33 @@
+import os
+
+print ("\n\nEste programa imprime a Série de Fibonacci até um termo n qualquer e soma todos os números pares da série!")
+termoN = int(input("\n\nInforme a quantidade de termos para impressão: "))
+soma = 0
+cont = 0
+
+if (termoN <= 0):
+    print ("\n\nNão é possível imprimir nenhum termo da Série de Fibonacci")
+elif (termoN == 1):
+    print ("\n\nSérie de Fibonacci: 1, ")
+elif (termoN == 2):
+    print ("\n\nSérie de Fibonacci: 1, 1, ")
+elif (termoN > 2):
+    termo1 = 1
+    termo2 = 1
+    print ("\n\nSérie de Fibonacci: {0}, {1}, ".format(termo1, termo2), end="")
+    i = 2
+    while (i < termoN):
+        novoTermo = termo1 + termo2
+        print ("{}, ".format(novoTermo), end="")
+        termo1 = termo2
+        termo2 = novoTermo
+        i += 1
+        if novoTermo % 2 == 0:
+            soma += novoTermo
+            cont += 1
+    print ("...")
+    print ("\n\nVocê informou {} números pares e a soma entre eles é {}.".format(cont, soma))
+
+print ("\n\nObrigada por utilizar esse programa!\n\n")
+
+os.system ("Pause")
